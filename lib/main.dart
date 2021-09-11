@@ -25,32 +25,36 @@ class MyTodo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              expandedHeight: 178,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.android_outlined),
-                    ),
-                    Text("My Todolist"),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.filter_outlined),
-                    ),
-                  ],
-                ),
+      appBar: AppBar(
+        leading: Icon(Icons.android_outlined),
+        centerTitle: true,
+        title: Text("Todo App"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.filter_alt_outlined),
+          ),
+        ],
+        elevation: 0,
+        bottom: PreferredSize(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Total Task"),
+                  Text("24"),
+                ],
               ),
-            ),
-            SliverList(
-              delegate: delegate,
-            ),
-          ],
+              Column(
+                children: [
+                  ElevatedButton(onPressed: () {}, child: Text("Add")),
+                ],
+              )
+            ],
+          ),
+          preferredSize: Size.fromHeight(50),
         ),
       ),
     );
