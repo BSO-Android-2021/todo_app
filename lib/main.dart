@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:todo_app/ui/alert/confirm_dialog.dart';
+import 'package:todo_app/ui/form/form_add_list_dialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -117,7 +119,7 @@ class _MyTodoState extends State<MyTodo> {
                 Column(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => formAddListDialog(context),
                       child: Text("Add New"),
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -259,23 +261,26 @@ class _MyTodoState extends State<MyTodo> {
                                     ),
                                   ),
                                   PopupMenuItem(
-                                    child: Row(
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 8),
-                                          child: Icon(
-                                            Icons.delete,
-                                            color: Color(0xffF64E80),
+                                    child: GestureDetector(
+                                      onTap: () => confirmDialog(context),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(right: 8),
+                                            child: Icon(
+                                              Icons.delete,
+                                              color: Color(0xffF64E80),
+                                            ),
                                           ),
-                                        ),
-                                        Text(
-                                          "Delete",
-                                          style: TextStyle(
-                                            color: Color(0xffF64E80),
+                                          Text(
+                                            "Delete",
+                                            style: TextStyle(
+                                              color: Color(0xffF64E80),
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   )
                                 ],
@@ -355,23 +360,26 @@ class _MyTodoState extends State<MyTodo> {
                                     ),
                                   ),
                                   PopupMenuItem(
-                                    child: Row(
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 8),
-                                          child: Icon(
-                                            Icons.delete,
-                                            color: Color(0xffF64E80),
+                                    child: GestureDetector(
+                                      onTap: () => confirmDialog(context),
+                                      child: Row(
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(right: 8),
+                                            child: Icon(
+                                              Icons.delete,
+                                              color: Color(0xffF64E80),
+                                            ),
                                           ),
-                                        ),
-                                        Text(
-                                          "Delete",
-                                          style: TextStyle(
-                                            color: Color(0xffF64E80),
+                                          Text(
+                                            "Delete",
+                                            style: TextStyle(
+                                              color: Color(0xffF64E80),
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   )
                                 ],
